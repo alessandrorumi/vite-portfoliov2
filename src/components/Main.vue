@@ -58,6 +58,7 @@ export default {
 .container {
     font-size: 35px;
     width: 100%;
+    background-attachment: fixed;
 }
 
 button {
