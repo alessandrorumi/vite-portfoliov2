@@ -1,12 +1,12 @@
 <template>
     <div class="container">
         <div class="video-container">
-            <video @click="playAnimation" :class="{ 'slide-out-left': exitAnimation }" class="desktop-video" autoplay
+            <video @click="playAnimation" :class="{ 'slide-out-left': exitAnimation }" class="desktop-video" autoplay playsinline
                 muted @animationend="navigateToMain">
                 <source src="../assets/desktop/landing.mp4" type="video/mp4">
                 Il tuo browser non supporta il tag video.
             </video>
-            <video class="mobile-video" autoplay loop muted>
+            <video class="mobile-video" autoplay playsinline muted>
                 <source src="../assets/mobile/landing.mp4" type="video/mp4">
                 Il tuo browser non supporta il tag video.
             </video>
