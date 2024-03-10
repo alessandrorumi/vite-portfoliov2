@@ -6,7 +6,7 @@
                 <source src="../assets/desktop/landing.mp4" type="video/mp4">
                 Il tuo browser non supporta il tag video.
             </video>
-            <video class="mobile-video" autoplay playsinline muted>
+            <video @click="playAnimationAndNavigate" class="mobile-video" autoplay playsinline muted>
                 <source src="../assets/mobile/landing.mp4" type="video/mp4">
                 Il tuo browser non supporta il tag video.
             </video>
@@ -27,9 +27,15 @@ export default {
         },
         navigateToMain() {
             this.$router.push('/main');
+        },
+        playAnimationAndNavigate() {
+            this.exitAnimation = true;
+            setTimeout(() => {
+                this.navigateToMain();
+            }, 1000);
         }
     }
-};
+}
 </script>
 
 <style scoped>
