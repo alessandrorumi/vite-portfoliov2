@@ -75,6 +75,6 @@ export default {
 }
 
 .slide-out-left {
-    animation: slide-out-left 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: slide-out-left .75s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 </style>

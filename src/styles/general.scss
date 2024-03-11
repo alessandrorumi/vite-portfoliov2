@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #e8e8e8;
-  font-family: "Lobster Two", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+button {
+  padding: .75rem 1.25rem;
+  border-radius: 8px;
 }
 
 .highlight {
