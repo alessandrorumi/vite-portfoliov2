@@ -33,12 +33,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .video-container {
     background-color: #e8e8e8;
     width: 100%;
