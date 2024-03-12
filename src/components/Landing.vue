@@ -1,15 +1,10 @@
 <template>
-    <div class="container">
-        <div class="video-container">
-            <video @click="playAnimation" :class="{ 'slide-out-left': exitAnimation }" class="desktop-video" autoplay playsinline
-                muted @animationend="navigateToMain">
-                <source src="../assets/desktop/landing.mp4" type="video/mp4">
-                Il tuo browser non supporta il tag video.
-            </video>
-            <video @click="playAnimation" :class="{ 'slide-out-left': exitAnimation }" class="mobile-video" autoplay playsinline muted @animationend="navigateToMain">
-                <source src="../assets/mobile/landing.mp4" type="video/mp4">
-                Il tuo browser non supporta il tag video.
-            </video>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content p-5">
+        <div class="title d-flex align-items-center" :class="{ 'slide-out-left': exitAnimation }" @click="navigateToMain">
+            <h1 class="slide-in-left">PORTFOLIO</h1>
         </div>
     </div>
 </template>
@@ -22,38 +17,38 @@ export default {
         };
     },
     methods: {
-        playAnimation() {
-            this.exitAnimation = true;
-        },
         navigateToMain() {
+            this.exitAnimation = true;
             this.$router.push('/main');
         },
     }
 }
 </script>
 
-<style scoped>
-.video-container {
-    background-color: #e8e8e8;
-    width: 100%;
+<style lang="scss" scoped>
+.content {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    background-attachment: fixed;
+    .title {
+        height: 100%;
+        h1 {
+            font-weight: bold;
+            font-size: 8rem;
+        }
+    }
 }
 
-.desktop-video {
-    display: none;
+ @keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
-
-@media screen and (min-width: 768px) {
-    .desktop-video {
-        display: block;
-    }
-
-    .mobile-video {
-        display: none;
-    }
+.slide-in-left {
+	animation: slide-in-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes slide-out-left {
@@ -67,7 +62,6 @@ export default {
         opacity: 0;
     }
 }
-
 .slide-out-left {
     animation: slide-out-left .75s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }

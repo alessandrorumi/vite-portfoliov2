@@ -107,7 +107,7 @@ export default {
   }
 }
 .scale-in-ver-bottom {
-	animation: scale-in-ver-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-in-ver-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) .25s both;
 }
 
  @keyframes scale-out-ver-top {
@@ -133,7 +133,7 @@ transition: all 0.4s ease 0s;
 
 button:hover {
 color: #ffffff !important;
-background: #e5903c;
+background: rgba($color: #e5903c, $alpha: .8);
 border-color: #e5903c !important;
 transition: all 0.4s ease 0s;
 }
