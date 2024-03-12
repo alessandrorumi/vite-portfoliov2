@@ -28,6 +28,7 @@ export default {
 <style lang="scss" scoped>
 .content {
     height: 100vh;
+    cursor: pointer;
     .title {
         height: 100%;
         h1 {
