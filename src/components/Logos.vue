@@ -14,7 +14,6 @@ export default {
 }
 </script>
 
-
 <template>
     <div class="img d-flex justify-content-between">
       <div class="front-end">
@@ -60,5 +59,16 @@ img {
 }
 .scale-in-top-3 {
 	animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 7.5s both;
+}
+
+@media screen and (max-width: 768px) {
+    .img {
+        .front-end,
+        .front-end-2,
+        .back-end {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 </style>

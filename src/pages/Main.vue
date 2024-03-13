@@ -4,32 +4,38 @@
     <div class="bg bg3"></div>
     <div class="content">
         <div class="container d-flex flex-column justify-content-center mx-auto">
-            <div class="introduction">
+
+            <div class="introduction mb-5">
                 <div class="top d-flex align-items-center">
-                    <div class="text pt-5">
+                    <div class="text">
                         <Presentation/>
                         <div class="btns mt-5 d-flex">
-                            <a href="#contacts"><button class="slide-in-left">Chi sono?</button></a>
-                            <a href="#contacts"><button class="slide-in-left-2 mx-3">Progetti</button></a>
+                            <a href="#whoiam"><button class="slide-in-left">Chi sono?</button></a>
+                            <a href="#projects"><button class="slide-in-left-2 mx-3">Progetti</button></a>
                             <a href="#contacts"><button class="slide-in-left-3">Contattami</button></a>
                         </div>
                     </div>
-                    <!-- <div class="pc-image d-flex align-items-end">
-                        <img class="" src="../assets/pc.svg" alt="">
-                    </div> -->
+                    <div class="pc-image d-flex align-items-end">
+                        <img class="tilt-in-right-1" src="../assets/pc.svg" alt="">
+                    </div>
                 </div>
                 <div class="bottom d-flex flex-column">
                     <Logos :class="{ 'd-none': hideLogos, 'd-inline-block': !hideLogos }" />
                 </div>
             </div>
-            <div id="whoiam" style="height: 500px;">
 
+            <div id="whoiam" class="py-5" style="min-height: 500px;">
+                <div class="text">
+                    <p>Sono nato a Brescia il 21/08/1995. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, libero harum nisi alias delectus numquam distinctio obcaecati tenetur minus optio repellendus tempore, ducimus quae. Veritatis enim itaque ad pariatur in!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum a beatae aliquam voluptatibus adipisci impedit eius hic quod quaerat qui! Illum alias saepe quo vel voluptatem esse autem minus architecto.</p>
+                </div>
             </div>
-            <div id="projects" style="height: 500px;">
 
+            <div id="projects" class="py-5">
+                <MySwiper/>
             </div>
 
-            <div id="contacts" class="d-flex mb-5 w-50 mx-auto justify-content-around">
+            <div id="contacts" class="d-flex my-5 w-50 mx-auto justify-content-around">
                 <a class="d-flex align-items-center" href="https://github.com/alessandrorumi" target="_blank">
                     <img src="../assets/logos/github.svg" alt="Github Logo">
                     <h3 class="ms-4">GitHub</h3>
@@ -51,11 +57,13 @@
 <script>
 import Presentation from '../components/Presentation.vue'
 import Logos from '../components/Logos.vue'
+import MySwiper from '../components/MySwiper.vue'
 
 export default {
     components: {
         Presentation,
-        Logos
+        Logos,
+        MySwiper
     },
     data() {
         return {
@@ -78,6 +86,7 @@ export default {
         height: 100vh;
 
         .top {
+            justify-content: start;
             height: 80vh;
 
             .text {
@@ -88,7 +97,7 @@ export default {
                 width: 50%;
     
                 img {
-                    width: 100%; 
+                    width: 85%; 
                 }
             }
         }
@@ -98,6 +107,19 @@ export default {
             width: 100%;
             height: 20vh;
         }
+    }
+
+    #whoiam {
+        height: 100vh;
+        .text {
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    #projects {
+        height: 100vh;
     }
 
     #contacts {
@@ -130,6 +152,20 @@ export default {
 }
 .slide-in-left-3 {
 	animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 7.5s both;
+}
+
+@keyframes tilt-in-right-1 {
+  0% {
+    transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg) translateX(0) skewX(0deg);
+    opacity: 1;
+  }
+}
+.tilt-in-right-1 {
+	animation: tilt-in-right-1 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.75s both;
 }
 
  @keyframes scale-out-ver-top {
@@ -192,7 +228,10 @@ button:hover {
     .content {
         .introduction {
             .top {
+                height: 100%;
                 flex-direction: column;
+                justify-content: center;
+
                 .text {
                     width: 80%;
                 }
@@ -207,7 +246,6 @@ button:hover {
             .bottom {
                 justify-content: start;
                 height: 100%;
-                padding-top: 3.5rem;
             }
         }
 

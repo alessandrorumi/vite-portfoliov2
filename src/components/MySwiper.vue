@@ -21,9 +21,12 @@ export default {
 <template>
     <div class="container">
         <swiper :effect="'cards'" :loop="true" :grabCursor="true" :autoplay="{
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: false,
-        }" :modules="modules" class="mySwiper">
+        }" :modules="modules" 
+        prevent-clicks 
+        prevent-clicks-propagation 
+        class="mySwiper">
             <swiper-slide class="boolflix ">
                 <a href="https://www.youtube.com">
                     <div class="title">
@@ -58,8 +61,8 @@ export default {
 
 <style lang="scss" scoped>
 .swiper {
-    width: 85%;
-    height: 100%;
+    width: 75%;
+    height: 90vh;
 
     .title {
         width: 100%;
@@ -68,6 +71,10 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        h3 {
+            color: #fff;
+        }
     }
 
     a {
