@@ -3,7 +3,8 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <div class="content p-5">
-        <div class="title d-flex align-items-center" :class="{ 'slide-out-left': exitAnimation }" @click="navigateToMain">
+        <div class="title d-flex align-items-center" :class="{ 'slide-out-left': exitAnimation }"
+            @click="navigateToMain">
             <h1 class="slide-in-left">PORTFOLIO</h1>
         </div>
     </div>
@@ -19,7 +20,9 @@ export default {
     methods: {
         navigateToMain() {
             this.exitAnimation = true;
-            this.$router.push('/main');
+            setTimeout(() => {
+                this.$router.push('/main');
+            }, 1000);
         },
     }
 }
@@ -29,8 +32,10 @@ export default {
 .content {
     height: 100vh;
     cursor: pointer;
+
     .title {
         height: 100%;
+
         h1 {
             font-weight: bold;
             font-size: 8rem;
@@ -38,18 +43,20 @@ export default {
     }
 }
 
- @keyframes slide-in-left {
-  0% {
-    transform: translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
+
 .slide-in-left {
-	animation: slide-in-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes slide-out-left {
@@ -63,6 +70,7 @@ export default {
         opacity: 0;
     }
 }
+
 .slide-out-left {
     animation: slide-out-left .75s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }

@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="bottom d-flex flex-column justify-content-center">
-                    <Logos/>
+                    <Logos :class="{ 'd-none': hideLogos, 'd-inline-block': !hideLogos }" />
                 </div>
             </div>
             <div id="whoiam" style="height: 500px;">
@@ -28,17 +28,22 @@
             <div id="projects" style="height: 500px;">
 
             </div>
-            <div id="contacts">
-                <a href="https://github.com/alessandrorumi" target="_blank">
-                    <img src="../assets/logos/github.svg" alt="">
+
+            <div id="contacts" class="d-flex mb-5 w-50 mx-auto justify-content-around">
+                <a class="d-flex align-items-center" href="https://github.com/alessandrorumi" target="_blank">
+                    <img src="../assets/logos/github.svg" alt="Github Logo">
+                    <h3 class="ms-2">GitHub</h3>
                 </a>
-                <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=rumi.alessandro21@gmail.com" target="_blank">
-                    <img class="py-4" src="../assets/logos/gmail.svg" alt="">
+                <a class="d-flex align-items-center" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=rumi.alessandro21@gmail.com" target="_blank">
+                    <img class="py-4" src="../assets/logos/gmail.svg" alt="G-Mail Logo">
+                    <h3 class="ms-2">G-Mail</h3>
                 </a>
-                <a href="https://www.linkedin.com/in/alessandro-rumi/" target="_blank">
-                    <img src="../assets/logos/linkedin-original.svg" alt="">
+                <a class="d-flex align-items-center" href="https://www.linkedin.com/in/alessandro-rumi/" target="_blank">
+                    <img src="../assets/logos/linkedin-original.svg" alt="LinkedIn Logo">
+                    <h3 class="ms-2">LinkedIn</h3>
                 </a>
             </div>
+
         </div>
     </div>
 </template>
@@ -52,6 +57,16 @@ export default {
         Presentation,
         Logos
     },
+    data() {
+        return {
+        hideLogos: true
+        };
+    },
+    mounted() {
+    setTimeout(() => {
+        this.hideLogos = false;
+        }, 500);
+    }
 };
 </script>
 
@@ -85,7 +100,8 @@ export default {
     }
 
     #contacts {
-        border: 5px solid black;
+        border: 5px solid #606060;
+        border-radius: 20px;
         img {
             width: 40px;
             display: block;
@@ -115,7 +131,6 @@ export default {
 	animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 7.5s both;
 }
 
-
  @keyframes scale-in-ver-bottom {
   0% {
     transform: scaleY(0);
@@ -129,7 +144,7 @@ export default {
   }
 }
 .scale-in-ver-bottom {
-	animation: scale-in-ver-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) .25s both;
+	animation: scale-in-ver-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
  @keyframes scale-out-ver-top {
@@ -146,6 +161,21 @@ export default {
 }
 .scale-out-ver-top {
 	animation: scale-out-ver-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+.arrow {
+  animation: slide 1s ease-in-out infinite;
+  margin-left: 9px;
 }
 
 // Bottoni
