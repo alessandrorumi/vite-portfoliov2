@@ -17,16 +17,22 @@ export default {
 
 <template>
     <div class="img d-flex justify-content-between">
+      <div class="front-end">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" :class="{ 'scale-in-top': animate }" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" :class="{ 'scale-in-top': animate }" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" :class="{ 'scale-in-top': animate }" />
+      </div>
+      <div class="front-end-2">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg" :class="{ 'scale-in-top': animate }" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" :class="{ 'scale-in-top-2': animate }" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original-wordmark.svg" :class="{ 'scale-in-top-2': animate }" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" :class="{ 'scale-in-top-2': animate }" />
+      </div>
+      <div class="back-end">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" :class="{ 'scale-in-top-3': animate }" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" :class="{ 'scale-in-top-3': animate }" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" :class="{ 'scale-in-top-3': animate }" />
+      </div>
     </div>
 </template>
 

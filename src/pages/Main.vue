@@ -6,19 +6,19 @@
         <div class="container d-flex flex-column justify-content-center mx-auto">
             <div class="introduction">
                 <div class="top d-flex align-items-center">
-                    <div class="text">
+                    <div class="text pt-5">
                         <Presentation/>
-                        <div class="btns mt-5 d-flex flex-row">
+                        <div class="btns mt-5 d-flex">
                             <a href="#contacts"><button class="slide-in-left">Chi sono?</button></a>
                             <a href="#contacts"><button class="slide-in-left-2 mx-3">Progetti</button></a>
                             <a href="#contacts"><button class="slide-in-left-3">Contattami</button></a>
                         </div>
                     </div>
-                    <div class="pc-image d-flex align-items-end">
-                        <img class="scale-in-ver-bottom" src="../assets/pc.svg" alt="">
-                    </div>
+                    <!-- <div class="pc-image d-flex align-items-end">
+                        <img class="" src="../assets/pc.svg" alt="">
+                    </div> -->
                 </div>
-                <div class="bottom d-flex flex-column justify-content-center">
+                <div class="bottom d-flex flex-column">
                     <Logos :class="{ 'd-none': hideLogos, 'd-inline-block': !hideLogos }" />
                 </div>
             </div>
@@ -32,11 +32,11 @@
             <div id="contacts" class="d-flex mb-5 w-50 mx-auto justify-content-around">
                 <a class="d-flex align-items-center" href="https://github.com/alessandrorumi" target="_blank">
                     <img src="../assets/logos/github.svg" alt="Github Logo">
-                    <h3 class="ms-2">GitHub</h3>
+                    <h3 class="ms-4">GitHub</h3>
                 </a>
                 <a class="d-flex align-items-center" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=rumi.alessandro21@gmail.com" target="_blank">
                     <img class="py-4" src="../assets/logos/gmail.svg" alt="G-Mail Logo">
-                    <h3 class="ms-2">G-Mail</h3>
+                    <h3 class="ms-4">G-Mail</h3>
                 </a>
                 <a class="d-flex align-items-center" href="https://www.linkedin.com/in/alessandro-rumi/" target="_blank">
                     <img src="../assets/logos/linkedin-original.svg" alt="LinkedIn Logo">
@@ -94,6 +94,7 @@ export default {
         }
 
         .bottom {
+            justify-content: center;
             width: 100%;
             height: 20vh;
         }
@@ -129,22 +130,6 @@ export default {
 }
 .slide-in-left-3 {
 	animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 7.5s both;
-}
-
- @keyframes scale-in-ver-bottom {
-  0% {
-    transform: scaleY(0);
-    transform-origin: 0% 100%;
-    opacity: 1;
-  }
-  100% {
-    transform: scaleY(1);
-    transform-origin: 0% 100%;
-    opacity: 1;
-  }
-}
-.scale-in-ver-bottom {
-	animation: scale-in-ver-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
  @keyframes scale-out-ver-top {
@@ -199,6 +184,36 @@ button:hover {
         
         button {
             margin: 1rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        .introduction {
+            .top {
+                flex-direction: column;
+                .text {
+                    width: 80%;
+                }
+
+                .btns {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            .bottom {
+                justify-content: start;
+                height: 100%;
+                padding-top: 3.5rem;
+            }
+        }
+
+        #contacts {
+            flex-direction: column;
+            align-items: center;
         }
     }
 }

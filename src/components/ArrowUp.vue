@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      this.showArrow = window.scrollY > 500;
+      this.showArrow = window.scrollY > 0;
     },
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
