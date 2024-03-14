@@ -28,28 +28,28 @@ export default {
         prevent-clicks-propagation 
         class="mySwiper">
             <swiper-slide class="boolflix ">
-                <a href="https://www.youtube.com">
+                <a href="#">
                     <div class="title">
                         <h3>Netflix (Responsive)</h3>
                     </div>
                 </a>
             </swiper-slide>
             <swiper-slide class="whatsapp">
-                <a href="https://www.youtube.com">
+                <a href="#">
                     <div class="title">
                         <h3>WhatsApp</h3>
                     </div>
                 </a>
             </swiper-slide>
             <swiper-slide class="spotify">
-                <a href="https://www.youtube.com">
+                <a href="#">
                     <div class="title">
                         <h3>Spotify</h3>
                     </div>
                 </a>
             </swiper-slide>
             <swiper-slide class="dc">
-                <a href="https://www.youtube.com">
+                <a href="#">
                     <div class="title">
                         <h3>DC Comics</h3>
                     </div>

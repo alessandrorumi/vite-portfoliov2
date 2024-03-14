@@ -96,7 +96,7 @@ export default {
   }
 }
 .tracking-in-expand-fwd-bottom {
-	animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) .5 both;
 }
 
 @keyframes text-pop-up-right {

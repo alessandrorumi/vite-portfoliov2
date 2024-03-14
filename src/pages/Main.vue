@@ -15,9 +15,9 @@
                             <a href="#contacts"><button class="slide-in-left-3">Contattami</button></a>
                         </div>
                     </div>
-                    <div class="pc-image d-flex align-items-end">
+                    <!-- <div class="pc-image d-flex align-items-end">
                         <img class="tilt-in-right-1" src="../assets/pc.svg" alt="">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="bottom d-flex flex-column">
                     <Logos :class="{ 'd-none': hideLogos, 'd-inline-block': !hideLogos }" />
@@ -25,10 +25,7 @@
             </div>
 
             <div id="whoiam" class="py-5" style="min-height: 500px;">
-                <div class="text">
-                    <p>Sono nato a Brescia il 21/08/1995. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, libero harum nisi alias delectus numquam distinctio obcaecati tenetur minus optio repellendus tempore, ducimus quae. Veritatis enim itaque ad pariatur in!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum a beatae aliquam voluptatibus adipisci impedit eius hic quod quaerat qui! Illum alias saepe quo vel voluptatem esse autem minus architecto.</p>
-                </div>
+                <WhoIAm/>
             </div>
 
             <div id="projects" class="py-5">
@@ -58,12 +55,14 @@
 import Presentation from '../components/Presentation.vue'
 import Logos from '../components/Logos.vue'
 import MySwiper from '../components/MySwiper.vue'
+import WhoIAm from '../components/WhoIAm.vue'
 
 export default {
     components: {
         Presentation,
         Logos,
-        MySwiper
+        MySwiper,
+        WhoIAm,
     },
     data() {
         return {
@@ -106,15 +105,6 @@ export default {
             justify-content: center;
             width: 100%;
             height: 20vh;
-        }
-    }
-
-    #whoiam {
-        height: 100vh;
-        .text {
-            p {
-                font-size: 1.5rem;
-            }
         }
     }
 

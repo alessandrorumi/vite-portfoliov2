@@ -3,9 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #000;
   scroll-behavior: smooth;
-  color: rgb(45, 45, 45);
+  color: #2d2d2d;
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -60,6 +59,7 @@ a {
   text-decoration: none;
 }
 
-.highlight {
-  background-color: #0097B2;
+i {
+  font-size: 2rem;
+  color: #2d2d2d;
 }
